@@ -16,6 +16,12 @@ production/studio-providers.json
 production/studio-hired.json
 studio_events.jsonl
 
+# Local runtime artifacts (do not open-source by default)
+production/preview/
+production/charter/
+production/policy.json
+production/model-routing.json
+
 # Studio events log may appear under subpackages
 **/studio_events.jsonl
 
