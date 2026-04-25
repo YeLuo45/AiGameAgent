@@ -1,0 +1,39 @@
+# aiGameGongfang Studio
+
+[中文](README.md) | [日本語](README.ja.md)
+
+A multi-target workflow repo for **H5 web games** and **WeChat/Douyin mini games**, with a “studio” web UI that orchestrates multiple AI agents (roles/departments) into a controllable pipeline. Agents connect via an **OpenAI-compatible HTTP API** to local or self-hosted inference endpoints (e.g. Ollama / vLLM / LM Studio).
+
+## Run
+
+1) Install dependencies
+
+```bash
+npm install
+```
+
+2) Start (server + web)
+
+```bash
+npm run dev
+```
+
+Default URL: `http://127.0.0.1:8787`
+
+## Configuration (do not commit secrets)
+
+- Copy `.env.example` to `.env` and fill in as needed
+- **Never commit**: `.env`, `studio_events.jsonl`, `node_modules/`, `dist/`
+
+## Layout
+
+- `apps/studio-web/`: studio frontend (isometric office + drawers)
+- `apps/studio-server/`: studio backend (queue/event log/OpenAI-compatible proxy, etc.)
+- `packages/shared/`: shared types and event definitions
+- `openspec/`: specs/changes (OpenSpec workflow)
+- `production/`: local runtime data (gitignored by default)
+
+## License
+
+Add a `LICENSE` file before publishing and update this section accordingly.
+
