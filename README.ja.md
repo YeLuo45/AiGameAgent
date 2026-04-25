@@ -42,5 +42,5 @@ npm run dev:web
 
 ## ライセンス
 
-公開前に `LICENSE` を追加し、このセクションを更新してください。
+本プロジェクトは **MIT License** です。`LICENSE` を参照してください。
 

@@ -42,5 +42,5 @@ npm run dev:web
 
 ## 许可
 
-开源前请补充许可证文件（例如 `LICENSE`），并在此处写明。
+本项目采用 **MIT License**，详见 `LICENSE`。
 

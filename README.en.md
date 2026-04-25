@@ -42,5 +42,5 @@ npm run dev:web
 
 ## License
 
-Add a `LICENSE` file before publishing and update this section accordingly.
+Licensed under the **MIT License**. See `LICENSE`.
 
