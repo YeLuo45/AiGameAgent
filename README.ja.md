@@ -12,7 +12,7 @@
 npm install
 ```
 
-2) 起動（server + web）
+2) 起動（server + web、1コマンド）
 
 ```bash
 npm run dev
@@ -20,10 +20,17 @@ npm run dev
 
 デフォルト URL：`http://127.0.0.1:8787`
 
+個別に起動することもできます：
+
+```bash
+npm run dev:server
+npm run dev:web
+```
+
 ## 設定（秘密情報はコミットしない）
 
 - `.env.example` を `.env` にコピーして必要に応じて設定
-- **コミット禁止**：`.env`、`studio_events.jsonl`、`node_modules/`、`dist/`
+- 秘密情報/ログ/ローカル依存/ビルド生成物は `.gitignore` で既定無視
 
 ## 構成
 

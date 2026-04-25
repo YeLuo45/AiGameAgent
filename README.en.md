@@ -12,7 +12,7 @@ A multi-target workflow repo for **H5 web games** and **WeChat/Douyin mini games
 npm install
 ```
 
-2) Start (server + web)
+2) Start (server + web, single command)
 
 ```bash
 npm run dev
@@ -20,10 +20,17 @@ npm run dev
 
 Default URL: `http://127.0.0.1:8787`
 
+Or start them separately:
+
+```bash
+npm run dev:server
+npm run dev:web
+```
+
 ## Configuration (do not commit secrets)
 
 - Copy `.env.example` to `.env` and fill in as needed
-- **Never commit**: `.env`, `studio_events.jsonl`, `node_modules/`, `dist/`
+- Secrets/logs/local deps/build outputs are ignored by default via `.gitignore`
 
 ## Layout
 

@@ -12,7 +12,7 @@
 npm install
 ```
 
-2) 启动（服务端 + Web）
+2) 启动（服务端 + Web，一条命令）
 
 ```bash
 npm run dev
@@ -20,10 +20,17 @@ npm run dev
 
 默认地址：`http://127.0.0.1:8787`
 
+也可以分别启动：
+
+```bash
+npm run dev:server
+npm run dev:web
+```
+
 ## 配置（不要提交密钥）
 
 - 复制 `.env.example` 为 `.env` 按需填写
-- **永远不要提交**：`.env`、`studio_events.jsonl`、`node_modules/`、`dist/`
+- 真实密钥、运行日志、本地依赖与构建产物已在 `.gitignore` 中默认忽略
 
 ## 目录
 
