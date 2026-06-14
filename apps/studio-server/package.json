@@ -5,7 +5,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "cross-env STUDIO_REPO_ROOT=../.. tsx watch src/index.ts",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "test:infra": "node --import tsx --test src/infrastructure/**/*.test.ts",
+    "test:infra:cov": "c8 --reporter=text-summary --include='src/infrastructure/**/*.ts' --exclude='src/infrastructure/**/*.test.ts' -- node --import tsx --test src/infrastructure/**/*.test.ts"
   },
   "dependencies": {
     "@aigongfang/shared": "file:../../packages/shared",

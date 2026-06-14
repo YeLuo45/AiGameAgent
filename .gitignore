@@ -28,3 +28,7 @@ production/model-routing.json
 # Workspace build outputs (monorepo)
 apps/*/dist/
 packages/*/dist/
+
+# Test coverage artifacts
+apps/studio-server/coverage/
+coverage/
