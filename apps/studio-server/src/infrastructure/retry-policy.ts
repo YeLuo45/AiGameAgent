@@ -75,7 +75,8 @@ export function buildRetrySequence(
     if (decision === "give-up") break;
     const delay = computeDelay(config, attempt, rand);
     cumulative += delay;
-    out.push({ attempt, delayMs: delay, reason: errors[i]?.code ?? `status_${errors[i]?.status}` ?? "unknown", cumulativeMs: cumulative });
+    const reasonText = errors[i]?.code ?? (errors[i]?.status !== undefined ? `status_${errors[i]?.status}` : "unknown");
+    out.push({ attempt, delayMs: delay, reason: reasonText, cumulativeMs: cumulative });
   }
   return out;
 }

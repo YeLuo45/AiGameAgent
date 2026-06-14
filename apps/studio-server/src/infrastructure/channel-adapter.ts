@@ -97,7 +97,7 @@ export function aggregateChunks(chunks: ChannelChunk[]): {
   text: string;
   toolCalls: Array<{ id: string; name: string; args: string }>;
   usage: ChannelUsage;
-  finishReason: ChannelChunk extends { type: "done"; finishReason: infer F } ? F : never;
+  finishReason: "stop" | "length" | "tool_calls" | "error" | null;
   error: string | null;
 } {
   let text = "";
