@@ -11,7 +11,9 @@ export interface ConsolidationResult {
   categories: string[];
 }
 
-const THEME_KEYWORDS: Record<string, string[]> = {
+type ThemeCategory = "preference" | "success-pattern" | "failure-pattern" | "stylistic" | "domain";
+
+const THEME_KEYWORDS: Record<ThemeCategory, string[]> = {
   preference: ["like", "prefer", "want", "love", "favorite", "hate", "dislike"],
   "success-pattern": ["worked", "succeeded", "good", "right", "correct", "passed"],
   "failure-pattern": ["failed", "wrong", "bug", "error", "broke", "rejected"],
@@ -19,10 +21,10 @@ const THEME_KEYWORDS: Record<string, string[]> = {
   domain: ["game", "engine", "render", "physics", "ai", "audio"],
 };
 
-export function detectTheme(text: string): keyof typeof THEME_KEYWORDS | null {
+export function detectTheme(text: string): ThemeCategory | null {
   const lower = text.toLowerCase();
-  for (const [cat, keywords] of Object.entries(THEME_KEYWORDS)) {
-    if (keywords.some((k) => lower.includes(k))) return cat as keyof typeof THEME_KEYWORDS;
+  for (const [cat, keywords] of Object.entries(THEME_KEYWORDS) as [ThemeCategory, string[]][]) {
+    if (keywords.some((k) => lower.includes(k))) return cat;
   }
   return null;
 }
@@ -39,7 +41,7 @@ export function consolidate(layer3: L3AgentMemoryState, layer4: L4PatternMemoryS
       const theme = detectTheme(note.content);
       if (!theme) continue;
       const key = `${cat}-${note.content.slice(0, 30).replace(/\s+/g, "-").toLowerCase()}`;
-      newL4 = recordPattern(newL4, theme, key, note.content);
+      newL4 = recordPattern(newL4, theme as "preference" | "success-pattern" | "failure-pattern" | "stylistic" | "domain", key, note.content);
       recorded++;
       consumed++;
       categories.add(theme);
