@@ -32,3 +32,4 @@ packages/*/dist/
 # Test coverage artifacts
 apps/studio-server/coverage/
 coverage/
+production/
